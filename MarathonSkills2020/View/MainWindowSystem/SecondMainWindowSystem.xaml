@@ -49,6 +49,7 @@
         <Grid Grid.Row="2" Background="#FF1F3F42">
             <TextBlock Text="{Binding Path=TimeBeforeStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="460,145,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
