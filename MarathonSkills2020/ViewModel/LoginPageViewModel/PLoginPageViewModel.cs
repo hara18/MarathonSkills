@@ -9,54 +9,75 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
     {
         private string email, password;
 
-    public string Email
-    {
-        get => this.email;
-        set => Set<string>(ref email, value);
-    }
-
-    public string Password
-    {
-        get => this.password;
-        set => Set<string>(ref password, value);
-    }
-
-    public ICommand LoginCommand { get; set; }
-    public ICommand BackCommand { get; set; }
-
-    public PLoginPageViewModel()
-    {
-        this.LoginCommand = new Command(LoginCommandClick);
-        this.BackCommand = new Command(BackCommandClick);
-    }
-
-    private void BackCommandClick(object obj)
-    {
-    }
-
-    private void LoginCommandClick(object obj)
-    {
-        var user = base.context.User.Where(i => i.Email == this.Email && i.Password == this.Password);
-
-        if (user.Count() > 0)
+        public string Email
         {
-            switch (Convert.ToChar(user.FirstOrDefault().RoleId))
+            get => this.email;
+            set => Set<string>(ref email, value);
+
+        }
+
+        public string Password
+        {
+            get => this.password;
+            set => Set<string>(ref password, value);
+
+        }
+
+        //Обработчики кнопок
+
+        public ICommand LoginCommand { get; set; }
+
+        public ICommand BackCommand { get; set; }
+
+
+
+        public PLoginPageViewModel()
+        {
+
+            this.LoginCommand = new Command(LoginCommandClick);
+            this.BackCommand = new Command(BackCommandClick);
+
+        }
+
+
+        private void BackCommandClick(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        //Авторизация пользователя
+        private void LoginCommandClick(object obj)
+        {
+            //Поиск пользователя с таким же именем и паролем
+            var user = base.context.User.Where(i => i.Email == this.Email && i.Password == this.Password);
+
+            //Если кол-во пользователей больше одного
+            //то далее проверяется роль пользователя
+            //в ином случае просим ввести логин и пароль повторно
+            if (user.Count() > 0)
             {
-                case 'A':
+                if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'A')
+                {
                     base.MessageBoxInformation("Вы успешно вошли как администратор");
-                    break;
-                case 'C':
+
+                }
+                else if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'C')
+                {
                     base.MessageBoxInformation("Вы успешно вошли как координатор");
-                    break;
-                case 'R':
+
+                }
+                else if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'R')
+                {
                     base.MessageBoxInformation("Вы успешно вошли как бегун");
-                    break;
+
+                }
             }
-        }
-        else
-        {
-            base.MessageBoxError("Неправильный логин или пароль");
+            else
+            {
+                base.MessageBoxError("Неправильный логин или пароль");
+            }
+
         }
     }
 }
-}
+

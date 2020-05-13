@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MarathonSkills2020.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,11 @@ namespace MarathonSkills2020.View.MainWindowSystem
         public SecondMainWindowSystem()
         {
             InitializeComponent();
-        }
+        
+        DataContext = new ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel();
+        ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel.CloseWSecondMainWindow = new Action(() => this.Close());
     }
+
+
+}
 }

@@ -13,18 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarathonSkills2020.View.Sponsor
+namespace MarathonSkills2020.View.Runner
 {
     /// <summary>
-    /// Логика взаимодействия для SponsorRunnerPage.xaml
+    /// Логика взаимодействия для NewPageRunner.xaml
     /// </summary>
-    public partial class SponsorRunnerPage : Page
+    public partial class NewPageRunner : Page
     {
-        public SponsorRunnerPage()
+        public NewPageRunner()
         {
-            InitializeComponent();
-            DataContext = new ViewModel.SponsorRunnerPageViewModel.SponsorRunnerPageViewModel();
+            {
+
+                InitializeComponent();
+
+                DataContext = new ViewModel.RunnerPagesViewModel.NewRunnerPageViewModel();
+
+            }
 
         }
+
     }
 }

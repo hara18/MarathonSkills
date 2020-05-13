@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace MarathonSkills2020.ViewModel.HelperViewModel
 {
+    public delegate void SetPageDelegate(Page page);
     class HelperViewModel : ViewModelProp
     {
         protected Model.context context = new Model.context();
+        public static SetPageDelegate setPage { get; set; }
+
+        public static void SetPage(Page page)
+        {
+            setPage?.Invoke(page);
+        }
 
         public static void MessageBoxErrorStatic(Exception ex)
         {
@@ -17,25 +25,28 @@ namespace MarathonSkills2020.ViewModel.HelperViewModel
             MessageBox.Show(ex.Message, ex.HelpLink, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        protected void MessageBoxError(string msg, string title = "Ошибка")
+
+        protected void MessageBoxError(string message, string title = "Ошибка")
         {
-            MessageBox.Show(msg, title, MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        protected void MessageBoxWarning(string msg, string title = "Проверьте данные")
+        protected void MessageBoxWarning(string message, string title = "Проверьте данные")
         {
-            MessageBox.Show(msg, title, MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
-        protected void MessageBoxInformation(string msg, string title = "Успешно")
+        protected void MessageBoxInformation(string message, string title = "Успешно")
         {
-            MessageBox.Show(msg, title, MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        protected MessageBoxResult MessageBoxQuestion(string msg, string title = "Вопрос")
+        protected MessageBoxResult MessageBoxQuestion(string message, string title = "Вопрос")
         {
-            return MessageBox.Show(msg, title, MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show(message, title, MessageBoxButton.YesNo, MessageBoxImage.Question);
+            return result;
         }
+
     }
 }
 

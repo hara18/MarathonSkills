@@ -18,29 +18,6 @@ namespace MarathonSkills2020.View.MainWindowSystem
             InitializeComponent();
             DataContext = new ViewModel.MainWindowSystemViewModel.WMainWindowSystemViewModel();
             ViewModel.MainWindowSystemViewModel.WMainWindowSystemViewModel.CloseWindowMain = new Action(() => this.Close());
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SponsorRunnerPage sponsorRunnerPage = new SponsorRunnerPage();
-            sponsorRunnerPage.ShowDialog();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            FindOutMoreInformation information = new FindOutMoreInformation();
-            information.ShowDialog();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            RegisterAsRunner registerAsRunner = new RegisterAsRunner();
-            registerAsRunner.ShowDialog();
-            this.Close();
         }
     }
-
 }

@@ -1,154 +1,51 @@
-﻿<Window x:Class="MarathonSkills2020.View.Sponsor.SponsorRunnerPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MarathonSkills2020.View.Sponsor"
-        mc:Ignorable="d"
-        Title="SponsorRunnerPage" Height="450" Width="800">
-    <Window.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" Margin="0,0,-27,-14">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+﻿<Page x:Class="MarathonSkills2020.View.Sponsor.SponsorRunnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills2020.View.Sponsor"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorRunnerPage">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Background="#FF1F3F42">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Foreground="White">
-                <Label.Effect>
-                    <DropShadowEffect BlurRadius="10" RenderingBias="Quality"/>
-                </Label.Effect> Спонсор бегуна</Label>
-            <TextBlock TextAlignment="Center" Grid.Row="1" Foreground="White">
-                <TextBlock.Effect>
-                    <DropShadowEffect BlurRadius="10" RenderingBias="Quality"/>
-                </TextBlock.Effect>
-            Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму,
-            <LineBreak/>
-            которую вы хотели бы спонсировать. Спасибо за вашу поддержку бегунов и их
-            <LineBreak/>
-            благотворительных учреждений
+            <Label>Спонсор бегуна</Label>
+            <TextBlock TextAlignment="Center" Grid.Row="1">
+                Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму,
+                <LineBreak/>
+                которую вы хотели бы спонсировать. Спасибо за вашу поддержку бегунов и их 
+                <LineBreak/> 
+                благотворительных учреждений
             </TextBlock>
         </Grid>
-
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <GroupBox Margin="10" BorderBrush="Black">
-                <ScrollViewer Foreground="#FF1F3F42">
+                <ScrollViewer >
                     <StackPanel Orientation="Vertical">
                         <TextBlock Margin="10">Информация о Спонсоре</TextBlock>
                         <GroupBox Width="230" Header="Ваше имя*:" Style="{StaticResource StyleGroupBoxText}">
-                            <TextBox Width="203" Style="{StaticResource StyleTextBox}" Text="{Binding Path=Name ,
-                UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                            <TextBox Width="203" Style="{StaticResource StyleTextBox}" Text="{Binding Path=Name , UpdateSourceTrigger=PropertyChanged}" ></TextBox>
                         </GroupBox>
                         <GroupBox Header="Бегун*:" Width="230" Style="{StaticResource StyleGroupBoxText}">
-                            <ComboBox Width="203" Style="{StaticResource StyleComboBox}" ItemsSource="{Binding Path=ListRunners}"
-                DisplayMemberPath="InformationAboutRunner" SelectedIndex="{Binding Path=SelectedIndex ,
-                UpdateSourceTrigger=PropertyChanged}"
-                SelectedItem="{Binding Path=SelectedRunner , UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                            <TextBox Width="203" Style="{StaticResource StyleTextBox}" Text="{Binding Path=NameRunner , UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         </GroupBox>
                         <GroupBox Header="Карта*:" Style="{StaticResource StyleGroupBoxText}" Width="215">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleTextBox}" Text="{Binding Path=OwnerCard ,
-            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <TextBox Style="{StaticResource StyleTextBox}" Text="{Binding Path=OwnerCard , 
+                                    UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 <Button Background="White" Height="20" Width="19" Margin="5 0 0 0" BorderBrush="{x:Null}">
                                     <Button.ToolTip>
                                         <ToolTip>
@@ -156,30 +53,31 @@
                                         </ToolTip>
                                     </Button.ToolTip>
                                     <ContentControl>
-                                        <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15"></Image>
+                                        <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15"></Image>
                                     </ContentControl>
                                 </Button>
+
                             </StackPanel>
+
                         </GroupBox>
                         <GroupBox Header="Номер карты*:" Style="{StaticResource StyleGroupBoxText}" Width="215">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleTextBox}" MaxLength="19" Text="{Binding Path=NumberCard ,
-            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <TextBox Style="{StaticResource StyleTextBox}" MaxLength="19" Text="{Binding Path=NumberCard , UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 <Button Background="White" Height="20" Width="19" Margin="5 0 0 0" BorderBrush="{x:Null}">
                                     <Button.ToolTip>
                                         <ToolTip>
                                             1234 1234 1234 1234</ToolTip>
                                     </Button.ToolTip>
                                     <ContentControl>
-                                        <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15"></Image>
+                                        <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15"></Image>
                                     </ContentControl>
                                 </Button>
+
                             </StackPanel>
                         </GroupBox>
                         <GroupBox Header="Срок действия*:" Style="{StaticResource StyleGroupBoxText}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Width="50" MaxLength="2" Height="25" Text="{Binding Path=MouthEnd ,
-            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <TextBox Width="50"   MaxLength="2" Height="25" Text="{Binding Path=MouthEnd , UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 <Button Background="White" Height="20" Width="19" Margin="5 0 0 0" BorderBrush="{x:Null}">
                                     <Button.ToolTip>
                                         <ToolTip>
@@ -187,12 +85,11 @@
                                         </ToolTip>
                                     </Button.ToolTip>
                                     <ContentControl>
-                                        <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15"></Image>
+                                        <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15" Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\info.png"></Image>
                                     </ContentControl>
                                 </Button>
 
-                                <TextBox Width="80" Margin="10 0 0 0" MaxLength="4" Height="25" ToolTip="" Text="{Binding Path=YearEnd,
-            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <TextBox Width="80" Margin="10 0 0 0" MaxLength="4" Height="25" ToolTip="" Text="{Binding Path=YearEnd, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 <Button Background="White" Height="20" Width="19" Margin="5 0 0 0" BorderBrush="{x:Null}">
                                     <Button.ToolTip>
                                         <ToolTip>
@@ -200,16 +97,15 @@
                                         </ToolTip>
                                     </Button.ToolTip>
                                     <ContentControl>
-                                        <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15"></Image>
+                                        <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15"></Image>
                                     </ContentControl>
                                 </Button>
+
                             </StackPanel>
                         </GroupBox>
-
                         <GroupBox Header="CVC*:" Style="{StaticResource StyleGroupBoxText}" Width="230">
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleTextBox}" MaxLength="3" Text="{Binding Path=CVC,
-            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <TextBox Style="{StaticResource StyleTextBox}" MaxLength="3" Text="{Binding Path=CVC, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                                 <Button Background="White" Height="20" Width="19" Margin="5 0 0 0" BorderBrush="{x:Null}">
                                     <Button.ToolTip>
                                         <ToolTip>
@@ -217,10 +113,12 @@
                                         </ToolTip>
                                     </Button.ToolTip>
                                     <ContentControl>
-                                        <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15"></Image>
+                                        <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15"></Image>
                                     </ContentControl>
                                 </Button>
+
                             </StackPanel>
+
                         </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
@@ -239,6 +137,7 @@
                         </Grid.RowDefinitions>
                         <Label>Благотворительность</Label>
                         <Grid Grid.Row="1">
+
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -247,22 +146,26 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="1" Orientation="Horizontal">
                                     <TextBlock Grid.Row="1" Margin="10 0 0 0">Фонд Кошек</TextBlock>
-                                    <Button Background="White" Height="20" Width="19" Margin="10 0 0 0" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle2}">
+                                    <Button Background="White" Height="20" Width="19" Margin="10 0 0 0" BorderBrush="{x:Null}">
                                         <Button.ToolTip>
                                             <ToolTip>
                                                 Кликнули и посмотрим
                                             </ToolTip>
                                         </Button.ToolTip>
                                         <ContentControl>
-                                            <Image Grid.Column="1" Style="{StaticResource InfoImage}" Width="15" RenderTransformOrigin="0.333,-0.733"></Image>
+                                            <Image Grid.Column="1"  Style="{StaticResource InfoImage}"  Width="15"></Image>
                                         </ContentControl>
                                     </Button>
+
                                 </StackPanel>
                             </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
 
+
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -278,12 +181,11 @@
                             <ColumnDefinition Width="1.6*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="1" Orientation="Horizontal" >
-                            <Button Template="{StaticResource ButtonTemplate}" Command="{Binding Path=MinCommand}" Height="20"
-                FontSize="8" Width="25" Margin="20 0 0 0" FontWeight="Bold" Content="min"></Button>
-                            <TextBox Height="15" Name="TextBoxSumDonation" FontSize="8" Width="50" Text="{Binding Path=SumDonation ,
-                UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0"></TextBox>
-                            <Button Template="{StaticResource ButtonTemplate}" Height="20" Command="{Binding Path=PlusCommand}"
-                FontSize="8" Width="25" Margin="10 0 0 0" FontWeight="Bold" Content="plus"></Button>
+                            <Button Template="{StaticResource ButtonTemplate}" Command="{Binding Path=MinCommand}" Height="20" FontSize="8" Width="25" Margin="20 0 0 0" FontWeight="Bold" Content="min"></Button>
+
+                            <TextBox Height="15" Name="TextBoxSumDonation" FontSize="8" Width="50"  Text="{Binding Path=SumDonation , 
+                                UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0"></TextBox>
+                            <Button Template="{StaticResource ButtonTemplate}" Height="20" Command="{Binding Path=PlusCommand}" FontSize="8" Width="25" Margin="10 0 0 0"  FontWeight="Bold" Content="plus"></Button>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -298,12 +200,11 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Command="{Binding
-            Path=PayCommand}" Width="Auto" Height="20" Grid.Column="1" FontSize="12" Background="#FF1F3F42" Foreground="White" BorderBrush="{x:Null}" >Заплатить</Button>
-                    <Button Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Command="{Binding
-            Path=CancelCommand}" Width="80" Height="20" Grid.Column="2" FontSize="12" Background="#FF1F3F42" BorderBrush="{x:Null}" Foreground="White">Отмена</Button>
+                    <Button Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Command="{Binding Path=PayCommand}" Width="Auto" Height="20" Grid.Column="1" FontSize="12" >Заплатить</Button>
+                    <Button Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Command="{Binding Path=CancelCommand}" Width="80" Height="20" Grid.Column="2" FontSize="12">Отмена</Button>
                 </Grid>
             </Grid>
         </Grid>
     </Grid>
-</Window>
+
+</Page>

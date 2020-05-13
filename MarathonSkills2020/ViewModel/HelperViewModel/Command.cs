@@ -5,23 +5,11 @@ namespace MarathonSkills2020.ViewModel.HelperViewModel
 {
     class Command : ICommand
     {
-        public bool CanExecute(object parameter)
-        {
-            if (canExecute != null)
-                return canExecute(parameter);
-            return true;
-        }
-
-        public void Execute(object parameter)
-        {
-            execute(parameter);
-        }
-
-
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
+
         }
 
         readonly Action<object> execute;
@@ -31,6 +19,17 @@ namespace MarathonSkills2020.ViewModel.HelperViewModel
         {
             execute = executeAction;
             canExecute = canExecuteFunc;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            if (canExecute != null) return canExecute(parameter);
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            execute(parameter);
         }
     }
 }

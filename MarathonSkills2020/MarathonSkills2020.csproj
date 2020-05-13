@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -77,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Images.cs" />
     <Compile Include="Model\Charity.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -155,6 +158,12 @@
     <Compile Include="ViewModel\LoginPageViewModel\PLoginPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowSystemViewModel\WMainWindowSystemViewModel.cs" />
     <Compile Include="ViewModel\MainWindowSystemViewModel\WSecondMainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MarathonInfo\FindOutMoreInformationViewModel.cs" />
+    <Compile Include="ViewModel\RunnerPagesViewModel\NewRunnerPageViewModel.cs" />
+    <Compile Include="ViewModel\RunnerPagesViewModel\RegisterAsRunnerViewModel.cs" />
+    <Compile Include="ViewModel\SponsorRunnerPageViewModel\ListSponsorPageViewModel.cs" />
+    <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorRunnerPageViewModel.cs" />
+    <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorshipConfirmationPageViewModel.cs" />
     <Compile Include="View\LoginPage\PLoginPage.xaml.cs">
       <DependentUpon>PLoginPage.xaml</DependentUpon>
     </Compile>
@@ -167,11 +176,23 @@
     <Compile Include="View\MarathonInfo\FindOutMoreInformation.xaml.cs">
       <DependentUpon>FindOutMoreInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Runner\MainPageRunner.xaml.cs">
+      <DependentUpon>MainPageRunner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Runner\NewPageRunner.xaml.cs">
+      <DependentUpon>NewPageRunner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Runner\RegisterAsRunner.xaml.cs">
       <DependentUpon>RegisterAsRunner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Sponsor\ListSponsorPage.xaml.cs">
+      <DependentUpon>ListSponsorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Sponsor\SponsorRunnerPage.xaml.cs">
       <DependentUpon>SponsorRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sponsor\SponsorshipConfirmationPage.xaml.cs">
+      <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -228,11 +249,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Runner\MainPageRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Runner\NewPageRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Runner\RegisterAsRunner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Sponsor\ListSponsorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Sponsor\SponsorRunnerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sponsor\SponsorshipConfirmationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

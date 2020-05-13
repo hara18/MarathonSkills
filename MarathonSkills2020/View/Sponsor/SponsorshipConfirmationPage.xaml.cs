@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace MarathonSkills2020.View.Sponsor
 {
     /// <summary>
-    /// Логика взаимодействия для SponsorRunnerPage.xaml
+    /// Логика взаимодействия для SponsorshipConfirmationPage.xaml
     /// </summary>
-    public partial class SponsorRunnerPage : Page
+    public partial class SponsorshipConfirmationPage : Page
     {
-        public SponsorRunnerPage()
+        public SponsorshipConfirmationPage()
         {
             InitializeComponent();
-            DataContext = new ViewModel.SponsorRunnerPageViewModel.SponsorRunnerPageViewModel();
+            DataContext = new ViewModel.SponsorRunnerPageViewModel.SponsorShipConfirmationPageViewModel();
 
         }
     }

@@ -12,26 +12,19 @@
             <RowDefinition/>
             <RowDefinition Height="0.10*"/>
         </Grid.RowDefinitions>
-
-        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}"></Frame>
-
-        <Grid Background="#FF1F3F42">
+        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}" ></Frame>
+        <Grid Background="#FF505050">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2"/>
+                <ColumnDefinition Width="0.2*"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="0.2"/>
+                <ColumnDefinition Width="0.2*"/>
             </Grid.ColumnDefinitions>
             <Button Content="Назад" Command="{Binding Path=BackCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80"></Button>
-            <Label FontSize="24" Grid.Column="1">
-                    <Label.Effect>
-                        <DropShadowEffect BlurRadius="10" RenderingBias="Quality"/>
-                    </Label.Effect> MARATHON SKILLS 2020</Label>
-            <Button Grid.Column="1" HorizontalAlignment="Right" Visibility="{Binding Path=VisibleButtonLogout,
-                UpdateSourceTrigger=PropertyChanged
-                }" Height = "35"
-                    Command="{Binding Path=LogoutCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80" BorderBrush="White" Background="#FF1F3F42" Foreground="White">
+            <TextBlock Grid.Column="1" FontSize="23" Foreground="White" HorizontalAlignment="Left">MARATHON SKILLS 2020</TextBlock>
+            <Button Grid.Column="2" Visibility="{Binding Path=VisibleButtonLogout, UpdateSourceTrigger=PropertyChanged}" Height="35"
+                    Command="{Binding Path=LogoutCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80">
                 <Button.Content>
-                    <TextBlock FontSize="10" Foreground="White">
+                    <TextBlock FontSize="10" Foreground="Black">
                         Выйти из
                         <LineBreak/>
                         профиля
@@ -39,16 +32,10 @@
                 </Button.Content>
             </Button>
         </Grid>
-        <Frame Grid.Row="1" Margin="3" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}" Width="790" Height="335" Foreground="Black">
-            <Frame.Background>
-                <ImageBrush ImageSource="gray-background-3.jpg" Stretch="UniformToFill"/>
-            </Frame.Background>
-
-        </Frame>
-
-        <Grid Grid.Row="2" Background="#FF1F3F42">
+        <Frame Grid.Row="1" Margin="3" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}"></Frame>
+        <Grid Background="#FF505050" Grid.Row="2">
             <TextBlock Text="{Binding Path=TimeBeforeStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Grid>
-
     </Grid>
 </Window>
+

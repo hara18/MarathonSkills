@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MarathonSkills2020.View.MarathonInfo
@@ -17,11 +18,13 @@ namespace MarathonSkills2020.View.MarathonInfo
     /// <summary>
     /// Логика взаимодействия для FindOutMoreInformation.xaml
     /// </summary>
-    public partial class FindOutMoreInformation : Window
+    public partial class FindOutMoreInformation : Page
     {
         public FindOutMoreInformation()
         {
             InitializeComponent();
+            DataContext = new ViewModel.MarathonInfo.FindOutMoreInformationViewModel();
+
         }
     }
 }

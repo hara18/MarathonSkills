@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MarathonSkills2020.ViewModel.MarathonInfo
+{
+    class FindOutMoreInformationViewModel
+    {
+    }
+}
