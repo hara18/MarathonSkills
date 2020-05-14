@@ -161,6 +161,7 @@
     <Compile Include="ViewModel\MarathonInfo\FindOutMoreInformationViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\NewRunnerPageViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\RegisterAsRunnerViewModel.cs" />
+    <Compile Include="ViewModel\RunnerPagesViewModel\RegistrationForAnEventViewModel.cs" />
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\ListSponsorPageViewModel.cs" />
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorshipConfirmationPageViewModel.cs" />
@@ -184,6 +185,9 @@
     </Compile>
     <Compile Include="View\Runner\RegisterAsRunner.xaml.cs">
       <DependentUpon>RegisterAsRunner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Runner\RegistrationForAnEvent.xaml.cs">
+      <DependentUpon>RegistrationForAnEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Sponsor\ListSponsorPage.xaml.cs">
       <DependentUpon>ListSponsorPage.xaml</DependentUpon>
@@ -258,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Runner\RegisterAsRunner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Runner\RegistrationForAnEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
