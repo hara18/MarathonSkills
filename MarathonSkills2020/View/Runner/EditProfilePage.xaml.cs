@@ -13,20 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MarathonSkills2020.View.LoginPage
+namespace MarathonSkills2020.View.Runner
 {
     /// <summary>
-    /// Логика взаимодействия для PLoginPage.xaml
+    /// Логика взаимодействия для EditProfilePage.xaml
     /// </summary>
-    public partial class PLoginPage : Page
+    public partial class EditProfilePage : Page
     {
-        public PLoginPage()
+        public EditProfilePage()
         {
             InitializeComponent();
+        
+        DataContext = new ViewModel.RunnerPagesViewModel.EditProfilePageViewModel();
 
-            DataContext = new ViewModel.LoginPageViewModel.PLoginPageViewModel();
         }
-
-
-    }
+}
 }

@@ -1,0 +1,118 @@
+﻿<Page x:Class="MarathonSkills2020.View.Runner.EditProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills2020.View.Runner"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditProfilePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Label>Редактирование профиля</Label>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <ScrollViewer>
+                    <StackPanel>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Email*:">
+                            <TextBox Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource StyleTextBox}" IsEnabled="False"></TextBox>
+                        </GroupBox>
+
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Имя*:">
+                            <TextBox Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource StyleTextBox}"></TextBox>
+                        </GroupBox>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Фамилия*:">
+                            <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource StyleTextBox}"></TextBox>
+                        </GroupBox>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Пол*:">
+                            <ComboBox SelectedIndex="{Binding Path=GenderSelectedIndex}">
+                                <ComboBoxItem>
+                                    Мужской
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    Женский
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </GroupBox>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Header="Дата рождения*" Height="60">
+                            <DatePicker SelectedDate="{Binding Path=SelectBithdate}">
+
+                            </DatePicker>
+                        </GroupBox>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Header="Страна*:">
+                            <ComboBox ItemsSource="{Binding Path=ListCountries, UpdateSourceTrigger=PropertyChanged}" 
+                                  SelectedItem="{Binding Path=SelectedCountry , UpdateSourceTrigger=PropertyChanged}"
+                                  DisplayMemberPath="CountryName">
+
+                            </ComboBox>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ScrollViewer Grid.Column="1">
+
+                    <StackPanel Grid.Column="1">
+                        <Button Width="80" Height="100"  Margin="20" Command="{Binding Path=SelectImageCommand}">
+                            <Button.Content>
+                                <Grid>
+                                    <TextBlock>Фото</TextBlock>
+                                    <Image Source="{Binding Path=PathFile, UpdateSourceTrigger=PropertyChanged}"></Image>
+                                </Grid>
+                            </Button.Content>
+                        </Button>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <GroupBox Style="{StaticResource StyleGroupBoxText}" Header="Путь к фото" Margin="20 0 0 0">
+                                <TextBox Text="{Binding Path=PathFile, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                            </GroupBox>
+                            <Button Height="25" Width="100" Margin="10 8 10 0" Command="{Binding Path=SelectImageCommand}"
+                                >Просмотр...</Button>
+                        </StackPanel>
+                        <Label>Смена пароля</Label>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Пароль*:">
+                            <TextBox Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource StyleTextBox}"></TextBox>
+                        </GroupBox>
+                        <GroupBox Style="{StaticResource StyleGroupBoxText}" Margin="5" 
+                              Header="Повторите пароль*:">
+                            <TextBox Text="{Binding Path=RepeatPassword, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource StyleTextBox}"></TextBox>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Style="{StaticResource ButtonSmall}" Template="{StaticResource ButtonTemplate}" Command="{Binding Path=SaveCommand}">
+                Сохранить
+            </Button>
+            <Button Grid.Column="2" Style="{StaticResource ButtonSmall}" Template="{StaticResource ButtonTemplate}" Command="{Binding Path=CancelCommand}">
+                Отмена
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

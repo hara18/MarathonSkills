@@ -7,6 +7,9 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
 {
     class PLoginPageViewModel : HelperViewModel.HelperViewModel
     {
+
+        public static Model.User User { get; set; }
+
         private string email, password;
 
         public string Email
@@ -56,6 +59,8 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
             //в ином случае просим ввести логин и пароль повторно
             if (user.Count() > 0)
             {
+                User = user.FirstOrDefault();
+
                 if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'A')
                 {
                     base.MessageBoxInformation("Вы успешно вошли как администратор");
@@ -68,7 +73,7 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
                 }
                 else if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'R')
                 {
-                    base.MessageBoxInformation("Вы успешно вошли как бегун");
+                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.Runner.MainPageRunner());
 
                 }
             }
@@ -80,4 +85,5 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
         }
     }
 }
+
 

@@ -15,48 +15,39 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <TextBlock FontSize="18" Grid.Column="1" Margin="156,15,316,14">Форма авторизации</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Margin="71,9,230,8">
-                Пожалуйста, авторизируйтесь в системе, используя
+            <TextBlock FontSize="18">Форма авторизации</TextBlock>
+            <TextBlock Grid.Row="1">
+                Пожалуйста, авторизуйтесть в системе, используя
                 <LineBreak/>
                 ваш адрес электронной почты и пароль
             </TextBlock>
         </Grid>
-
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <GroupBox Style="{StaticResource StyleGroupBoxTextLong}" Grid.Row="0" Header="Email:">
-                <TextBox Style="{StaticResource StyleTextBoxLong}" Text="{Binding Path=Email}" BorderBrush="{x:Null}"></TextBox>
+            <GroupBox Style="{StaticResource StyleGroupBoxTextLong}" Header="Email:">
+                <TextBox Style="{StaticResource StyleTextBoxLong}" Text="{Binding Path=Email}"></TextBox>
             </GroupBox>
-
-            <GroupBox Style="{StaticResource StyleGroupBoxTextLong}" Grid.Row="1" Header="Password:">
-                <TextBox Style="{StaticResource StyleTextBoxLong}" Text="{Binding Path=Password}" BorderBrush="{x:Null}"></TextBox>
+            <GroupBox Style="{StaticResource StyleGroupBoxTextLong}"  Grid.Row="1"  Header="Password:">
+                <TextBox Style="{StaticResource StyleTextBoxLong}" Text="{Binding Path=Password}"></TextBox>
             </GroupBox>
         </Grid>
-
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
+
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource ButtonSmall}" Command="{Binding Path=LoginCommand}" Margin="10" Template="{StaticResource ButtonTemplate}" HorizontalAlignment="Right" VerticalAlignment="Top">Войти</Button>
+            <Button Style="{StaticResource ButtonSmall}" Command="{Binding Path=BackCommand}" Margin="10" Template="{StaticResource ButtonTemplate}" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Top">Отмена</Button>
 
-            <Button Grid.Column="0" Style="{StaticResource ButtonSmall}" Command="{Binding Path=LoginCommand}" Margin="10" Template="{StaticResource ButtonTemplate}" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FF1F3F42" BorderBrush="{x:Null}" Foreground="White" FontFamily="Showcard Gothic">Войти</Button>
-            <Button Grid.Column="1" Style="{StaticResource ButtonSmall}" Command="{Binding Path=BackCommand}" Margin="10" Template="{StaticResource ButtonTemplate}" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1F3F42" Foreground="White" BorderBrush="{x:Null}">Отмена</Button>
+
         </Grid>
-
     </Grid>
 </Page>
-

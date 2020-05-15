@@ -114,7 +114,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label FontSize="20">MARATHON SKILLS 2020</Label>
+                <Label FontSize="20">MARATHON SKILLS 2016</Label>
                 <TextBlock Grid.Row="1" TextAlignment="Center" FontStyle="Italic"  FontSize="16">
                  Москва, Россия
                 <LineBreak/>

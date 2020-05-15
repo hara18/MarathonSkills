@@ -23,6 +23,9 @@ namespace MarathonSkills2020.View.Runner
         public MainPageRunner()
         {
             InitializeComponent();
+            DataContext = new ViewModel.RunnerPagesViewModel.MainPageRunnerViewModel();
+
         }
     }
 }
+
