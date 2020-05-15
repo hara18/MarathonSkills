@@ -24,8 +24,11 @@ namespace MarathonSkills2020.View.MainWindowSystem
         public SecondMainWindowSystem()
         {
             InitializeComponent();
-            DataContext = new ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel();
-        }
+        
+        DataContext = new ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel();
+        ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel.CloseWSecondMainWindow = new Action(() => this.Close());
     }
-}
 
+
+}
+}

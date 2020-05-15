@@ -5,45 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarathonSkills2020.View.MainWindowSystem"
         mc:Ignorable="d"
-        Title="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}" Height="500" Width="700">
+        Title="SecondMainWindowSystem" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.15*"/>
             <RowDefinition/>
             <RowDefinition Height="0.10*"/>
         </Grid.RowDefinitions>
-        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}" >
-
-        </Frame>
+        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}" ></Frame>
         <Grid Background="#FF505050">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.2*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.2*"/>
             </Grid.ColumnDefinitions>
-            <Button Content="Назад" Command="{Binding Path=BackCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80">
-
-            </Button>
-            <TextBlock Grid.Column="1" FontSize="23" Foreground="White" HorizontalAlignment="Left">
-                MARATHON SKILLS 2016
-            </TextBlock>
-            <Button Grid.Column="2"  Visibility="{Binding Path=VisibleButtonLogout,
-                UpdateSourceTrigger=PropertyChanged}" Height="35" 
+            <Button Content="Назад" Command="{Binding Path=BackCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80"></Button>
+            <TextBlock Grid.Column="1" FontSize="23" Foreground="White" HorizontalAlignment="Left">MARATHON SKILLS 2020</TextBlock>
+            <Button Grid.Column="2" Visibility="{Binding Path=VisibleButtonLogout, UpdateSourceTrigger=PropertyChanged}" Height="35"
                     Command="{Binding Path=LogoutCommand}" Template="{StaticResource ButtonTemplate}" Style="{StaticResource ButtonSmall}" Width="80">
                 <Button.Content>
                     <TextBlock FontSize="10" Foreground="Black">
-                        Выйти из 
+                        Выйти из
                         <LineBreak/>
                         профиля
                     </TextBlock>
                 </Button.Content>
             </Button>
         </Grid>
-        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Margin="3" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}">
-
-        </Frame>
-        <Grid Grid.Row="2" Background="#FF505050">
-            <TextBlock Text="{Binding Path=TimeBeforeStart , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <Frame Grid.Row="1" Margin="3" Content="{Binding Path=CurrentPage, UpdateSourceTrigger=PropertyChanged}"></Frame>
+        <Grid Background="#FF505050" Grid.Row="2">
+            <TextBlock Text="{Binding Path=TimeBeforeStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Grid>
     </Grid>
 </Window>
+

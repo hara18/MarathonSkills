@@ -13,15 +13,13 @@ namespace MarathonSkills2020.ViewModel.MainWindowSystemViewModel
 {
     class WSecondMainWindowSystemViewModel : ViewModel.HelperViewModel.HelperViewModel
     {
-
-        /// <summary>
-        /// значение данному свойству передается из класса WMainWindowSystemViewModel при нажатии на кнопку 
-        /// </summary>
         public static int NumberOfButtonPressed { get; set; }
 
-        /// <summary>
-        /// сохраняет текущую страницу
-        /// </summary>
+        public ICommand BackCommand { get; set; }
+        public ICommand LogoutCommand { get; set; }
+
+        public static Action CloseWSecondMainWindow { get; set; }
+
 
         private Page currentPage;
 
@@ -31,7 +29,6 @@ namespace MarathonSkills2020.ViewModel.MainWindowSystemViewModel
             set => this.Set<Page>(ref currentPage, value);
         }
 
-        //свойство для смены заголовка окна
         private string title;
         public string Title
         {
@@ -39,45 +36,88 @@ namespace MarathonSkills2020.ViewModel.MainWindowSystemViewModel
             set => this.Set<string>(ref title, value);
         }
 
-        //метод перехода между страницами и смены заголовка окна
         private void SetPages(Page page)
         {
             this.Title = page.Title;
             this.CurrentPage = page;
 
         }
-
         public WSecondMainWindowSystemViewModel()
         {
 
-            //CurrentPage = new View.SponsorPages.SponsorRunnerPage();
-
-            //присваиваем делегату метод перехода между страницами
             ViewModel.HelperViewModel.HelperViewModel.setPage = SetPages;
 
 
             switch (NumberOfButtonPressed)
             {
                 case 1:
-                    //вызываем метод который активирует делегат 
-                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.Runner.RegistrationForAnEvent());
+                    CurrentPage = new View.Runner.RegisterAsRunner();
                     break;
                 case 2:
-                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.Sponsor.SponsorRunnerPage());
+                    CurrentPage = new View.Sponsor.SponsorRunnerPage();
                     break;
                 case 3:
-                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.MarathonInfo.FindOutMoreInformation());
+                    CurrentPage = new View.MarathonInfo.FindOutMoreInformation();
                     break;
                 case 4:
-                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.LoginPage.PLoginPage());
+                    CurrentPage = new View.LoginPage.PLoginPage();
                     break;
                 default:
                     MessageBox.Show("Ошибка передачи параметра нажатой кнопки");
                     break;
             }
+            DateTimeStartMarathon = DateTime.ParseExact(DATEMARATHON, "dd/MM/yyyy", null);
+
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Tick += timerTick;
+            dispatcherTimer.Start();
+
+
+            this.LogoutCommand = new Command(LogoutCommandClick);
+            this.BackCommand = new Command(BackCommandClick);
+        }
+        private string timeBeforeStart;
+        public string TimeBeforeStart
+        {
+            get => this.timeBeforeStart;
+            set => Set<string>(ref this.timeBeforeStart, value);
+        }
+
+        private const string DATEMARATHON = "29/06/2020"; //Задаем время для старта марафона
+        private DateTime DateTimeStartMarathon;
+        DispatcherTimer dispatcherTimer;
+
+        private void timerTick(object sender, EventArgs e)
+        {
+            TimeSpan dateTimeBeforeMarathone = DateTimeStartMarathon.Subtract(DateTime.Now); //Вычитаем текущее время из времени начала марафона
+            string daysBeforeMarathon = dateTimeBeforeMarathone.ToString("dd"); //Получаем дни
+            string hoursBeforeMarathon = dateTimeBeforeMarathone.ToString("hh"); //Получаем часы
+            string minutesBeforeMarathon = dateTimeBeforeMarathone.ToString("mm"); //Получаем минуты
+            string seconds = dateTimeBeforeMarathone.ToString("ss"); //Получаем секунды
+            TimeBeforeStart = $"{daysBeforeMarathon} дней {hoursBeforeMarathon} часов и {minutesBeforeMarathon} минут до старта марафона!"; //генерируем и присваиваем строку времени до старта
+
+        }
+
+        private void BackCommandClick(object obj)
+        {
+            this.OpenMainWindow(1);
+        }
+
+        private void OpenMainWindow(int numberOfButtonPressed)
+        {
+            ViewModel.MainWindowSystemViewModel.WSecondMainWindowSystemViewModel.NumberOfButtonPressed = numberOfButtonPressed;
+            View.MainWindowSystem.WMainWindowSystem main = new View.MainWindowSystem.WMainWindowSystem();
+            main.Show();
+            CloseWSecondMainWindow();
+
+        }
 
 
 
+        private void LogoutCommandClick(object obj)
+        {
+            throw new NotImplementedException();
         }
 
 
