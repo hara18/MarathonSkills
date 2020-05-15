@@ -159,6 +159,8 @@
     <Compile Include="ViewModel\MainWindowSystemViewModel\WMainWindowSystemViewModel.cs" />
     <Compile Include="ViewModel\MainWindowSystemViewModel\WSecondMainWindowViewModel.cs" />
     <Compile Include="ViewModel\MarathonInfo\FindOutMoreInformationViewModel.cs" />
+    <Compile Include="ViewModel\RunnerPagesViewModel\EditProfilePageViewModel.cs" />
+    <Compile Include="ViewModel\RunnerPagesViewModel\MainPageRunnerViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\NewRunnerPageViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\RegisterAsRunnerViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\RegistrationForAnEventViewModel.cs" />
@@ -176,6 +178,9 @@
     </Compile>
     <Compile Include="View\MarathonInfo\FindOutMoreInformation.xaml.cs">
       <DependentUpon>FindOutMoreInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Runner\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Runner\MainPageRunner.xaml.cs">
       <DependentUpon>MainPageRunner.xaml</DependentUpon>
@@ -250,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MarathonInfo\FindOutMoreInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Runner\EditProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

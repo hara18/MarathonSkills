@@ -148,9 +148,9 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Command="{Binding Path=LoginCommand}"
-                            Template="{StaticResource ButtonTemplate}"
-                            Grid.Row="3" Style="{StaticResource ButtonSmall}"
+                    <Button Command="{Binding Path=LoginCommand}" 
+                            Template="{StaticResource ButtonTemplate}" 
+                            Grid.Row="3" Style="{StaticResource ButtonSmall}" 
                             Grid.Column="1">Войти</Button>
                 </Grid>
 

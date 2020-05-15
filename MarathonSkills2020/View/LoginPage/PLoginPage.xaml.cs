@@ -22,7 +22,7 @@ namespace MarathonSkills2020.View.LoginPage
     {
         public PLoginPage()
         {
-            InitializeComponent();
+            DataContext = new ViewModel.LoginPageViewModel.PLoginPageViewModel();
         }
     }
 }
