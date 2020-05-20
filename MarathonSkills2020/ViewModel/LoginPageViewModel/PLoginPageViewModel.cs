@@ -63,7 +63,7 @@ namespace MarathonSkills2020.ViewModel.LoginPageViewModel
 
                 if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'A')
                 {
-                    base.MessageBoxInformation("Вы успешно вошли как администратор");
+                    ViewModel.HelperViewModel.HelperViewModel.SetPage(new View.AdministratorPages.MainPageAdministrator());
 
                 }
                 else if (Convert.ToChar(user.FirstOrDefault().RoleId) == 'C')

@@ -152,13 +152,17 @@
     <Compile Include="Model\Volunteer.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AdministratorPages\InventoryPageViewModel.cs" />
+    <Compile Include="ViewModel\AdministratorPages\MainPageAdministratorViewModel.cs" />
     <Compile Include="ViewModel\HelperViewModel\Command.cs" />
     <Compile Include="ViewModel\HelperViewModel\HelperViewModel.cs" />
     <Compile Include="ViewModel\HelperViewModel\ViewModelProp.cs" />
     <Compile Include="ViewModel\LoginPageViewModel\PLoginPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowSystemViewModel\WMainWindowSystemViewModel.cs" />
     <Compile Include="ViewModel\MainWindowSystemViewModel\WSecondMainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MarathonInfo\DurationMarathonPageViewModel.cs" />
     <Compile Include="ViewModel\MarathonInfo\FindOutMoreInformationViewModel.cs" />
+    <Compile Include="ViewModel\MarathonInfo\InteractiveMarathonMapPageViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\EditProfilePageViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\MainPageRunnerViewModel.cs" />
     <Compile Include="ViewModel\RunnerPagesViewModel\NewRunnerPageViewModel.cs" />
@@ -167,6 +171,12 @@
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\ListSponsorPageViewModel.cs" />
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModel\SponsorRunnerPageViewModel\SponsorshipConfirmationPageViewModel.cs" />
+    <Compile Include="View\AdministratorPages\InventoryPages.xaml.cs">
+      <DependentUpon>InventoryPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdministratorPages\MainPageAdministrator.xaml.cs">
+      <DependentUpon>MainPageAdministrator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginPage\PLoginPage.xaml.cs">
       <DependentUpon>PLoginPage.xaml</DependentUpon>
     </Compile>
@@ -176,8 +186,14 @@
     <Compile Include="View\MainWindowSystem\WMainWindowSystem.xaml.cs">
       <DependentUpon>WMainWindowSystem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MarathonInfo\DurationMarathonPage.xaml.cs">
+      <DependentUpon>DurationMarathonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MarathonInfo\FindOutMoreInformation.xaml.cs">
       <DependentUpon>FindOutMoreInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MarathonInfo\IntaractiveMarathonMapPage.xaml.cs">
+      <DependentUpon>IntaractiveMarathonMapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Runner\EditProfilePage.xaml.cs">
       <DependentUpon>EditProfilePage.xaml</DependentUpon>
@@ -238,10 +254,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resourse\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="View\AdministratorPages\InventoryPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdministratorPages\MainPageAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPage\PLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -254,7 +276,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MarathonInfo\DurationMarathonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MarathonInfo\FindOutMoreInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MarathonInfo\IntaractiveMarathonMapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -292,9 +322,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\MainWindowSystem\gray-background-3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Model\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataModel.Context.cs</LastGenOutput>
@@ -305,6 +332,25 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resourse\map-icon-drinks.png" />
+    <Resource Include="Resourse\map-icon-energy-bars.png" />
+    <Resource Include="Resourse\map-icon-information.png" />
+    <Resource Include="Resourse\map-icon-medical.png" />
+    <Resource Include="Resourse\map-icon-start.png" />
+    <Resource Include="Resourse\map-icon-toilets.png" />
+    <Resource Include="Resourse\marathon-skills-2016-marathon-map.jpg" />
+    <Resource Include="Resourse\airbus-a380.jpg" />
+    <Resource Include="Resourse\bus.jpg" />
+    <Resource Include="Resourse\f1-car.jpg" />
+    <Resource Include="Resourse\football-field.jpg" />
+    <Resource Include="Resourse\horse.png" />
+    <Resource Include="Resourse\info.png" />
+    <Resource Include="Resourse\jaguar.jpg" />
+    <Resource Include="Resourse\pair-of-havaianas.jpg" />
+    <Resource Include="Resourse\ronaldinho.jpg" />
+    <Resource Include="Resourse\sloth.jpg" />
+    <Resource Include="Resourse\slug.jpg" />
+    <Resource Include="Resourse\worm.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

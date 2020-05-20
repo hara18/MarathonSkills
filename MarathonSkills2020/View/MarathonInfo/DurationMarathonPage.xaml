@@ -1,0 +1,98 @@
+﻿<Page x:Class="MarathonSkills2020.View.MarathonInfo.DurationMarathonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills2020.View.MarathonInfo"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DurationMarathonPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label>Насколько долгий марафон</Label>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label>Имя выбранного пункта</Label>
+                <Image Grid.Row="1" Margin="30" Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\airbus-a380.jpg"></Image>
+                <TextBlock Grid.Row="2" > При скорости 15km/h и дистанции 73m метров 
+                <LineBreak/>
+                Марафон можно пробежать менее чем за 3 секунды
+                </TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TabControl Margin="20">
+                    <TabItem Header="Скорость">
+                        <TabItem.Content>
+                            <ListBox>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\f1-car.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >F1 Car</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\slug.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Slug</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\horse.png" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Horse</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\sloth.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Sloth</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\jaguar.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Jaguar</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\worm.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Worm</TextBlock>
+                                </StackPanel>
+                            </ListBox>
+                        </TabItem.Content>
+                    </TabItem>
+                    <TabItem Header="Дистанция">
+                        <TabItem.Content>
+                            <ListBox>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\bus.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Bus</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\pair-of-havaianas.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Pair of Havaianas</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\airbus-a380.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Airbus A38</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\football-field.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Football Field</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\alyos\source\repos\MarathonSkills2020\MarathonSkills2020\Resourse\ronaldinho.jpg" Width="80" Margin="0 0 10 0"/>
+                                    <TextBlock FontSize="20" >Ronaldinho</TextBlock>
+                                </StackPanel>
+                            </ListBox>
+                        </TabItem.Content>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Page>

@@ -1,0 +1,40 @@
+﻿<Page x:Class="MarathonSkills2020.View.AdministratorPages.InventoryPages"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills2020.View.AdministratorPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InventoryPages">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Label>Инвентарь</Label>
+        <TextBlock Grid.Row="1">Всего зарегистрировано бегунов на марафон 5113</TextBlock>
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Path=ListInventory , UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Выбрало данный вариант" Binding="{Binding Path=FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Номер" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="RFID бр-т" Binding="{Binding Path=Number2}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Бейсболка" Binding="{Binding Path=Number3}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Бут. Воды" Binding="{Binding Path=Numbe4r}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Футболка" Binding="{Binding Path=Number5}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Сув. букл." Binding="{Binding Path=Number6}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource ButtonSmall}" Template="{StaticResource ButtonTemplate}" Command="{Binding Path=PrintReportCommand}">Отчёт</Button>
+            <Button Style="{StaticResource ButtonSmall}" Grid.Column="1" Template="{StaticResource ButtonTemplate}">Поступление</Button>
+        </Grid>
+    </Grid>
+</Page>
